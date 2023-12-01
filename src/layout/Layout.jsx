@@ -2,7 +2,7 @@ import React from "react";
 import { Outlet } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
-import SuggestionBar from "../components/SuggestionBar";
+import SuggestionBar from "../components/suggestionBar/SuggestionBar";
 const Layout = () => {
   return (
     <div>

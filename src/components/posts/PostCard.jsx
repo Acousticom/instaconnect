@@ -26,7 +26,7 @@ const PostCard = ({ post }) => {
   const [showComments, setShowComments] = useState(false);
   const [showOptions, setShowOptions] = useState(false);
   const [showEditModal,setShowEditModal]=useState(false)
-  console.log(post);
+  // console.log(post);
   // console.log(user);
   // console.log(currentUser);
   const filteredPostCard = user?.find(

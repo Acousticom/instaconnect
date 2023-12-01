@@ -5,6 +5,7 @@ import {
   followHandler,
   getAllusers,
   getBookmark,
+  getUserByUsername,
   removeBookmarkHandler,
   unFollowHandler,
 } from "../services/userServices";
@@ -32,6 +33,14 @@ const UserProvider = ({ children }) => {
     }
   };
 
+  const fetchUserByUsername=async(username)=>{
+    try {
+        const {status,data:{user}}=await getUserByUsername(username)
+        if(status===200||status===201){userDispatch({type:"GET_USER_DETAILS",payload:user})}
+    } catch (error) {
+      
+    }
+  }
   const editUserHandler = async (userData) => {
     try {
       const {

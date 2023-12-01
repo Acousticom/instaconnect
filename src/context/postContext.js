@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useReducer } from "react";
 import {
+  addPost,
   deletePost,
   dislikeHandler,
   editPost,
@@ -129,6 +130,18 @@ const PostProvider = ({ children }) => {
       toast.error(error.message)
     }
   }
+
+  const addUserPost=async(postData)=>{
+    try {
+      const {status,data:{posts}}=await addPost(postData,token)
+      if(status===200||status===201){
+        postDispatch({type:"CREATE_NEW_POST",payload:posts})
+      }
+      toast.success("Post added sucessfully")
+    } catch (error) {
+      toast.error(error.message)
+    }
+  }
   useEffect(() => {
     getPost();
   }, []);
@@ -142,7 +155,8 @@ const PostProvider = ({ children }) => {
         editUserComment,
         deleteUserComment,
         deleteUserPost,
-        editUserPost
+        editUserPost,
+        addUserPost
       }}
     >
       {children}

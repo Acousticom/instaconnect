@@ -27,10 +27,17 @@ const deletePost = async (postId, token) => {
 };
 
 const editPost = async (postData, token) =>
-    await axios.post(
-      `/api/posts/edit/${postData._id}`,
-      { postData },
-      { headers: { authorization: token } }
-    );
+  await axios.post(
+    `/api/posts/edit/${postData._id}`,
+    { postData },
+    { headers: { authorization: token } }
+  );
 
-export { getAllPosts, likeHandler, dislikeHandler, deletePost, editPost };
+const addPost =  (postData, token) => {
+  return axios.post(
+    `/api/posts`,
+    { postData },
+    { headers: { authorization: token } }
+  );
+};
+export { getAllPosts, likeHandler, dislikeHandler, deletePost, editPost,addPost };
