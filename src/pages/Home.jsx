@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { usePost } from "../context/postContext";
 import { useAuth } from "../context/authContext";
 import PostCard from "../components/posts/PostCard";
@@ -11,7 +11,7 @@ const Home = () => {
   const homePost = posts.filter(
     (post) =>
       post?.username === currentUser?.username ||
-      currentUser?.following.find(
+      currentUser?.following?.find(
         (followingUser) => followingUser?.username === post?.username
       )
   );

@@ -19,7 +19,7 @@ const Profile = () => {
       {userDetails &&<ProfileDetails profilePost={profilePost} username={username} userDetails={userDetails}/>}
       {profilePost.length>0?profilePost.map((post) => (
         <PostCard post={post} key={post._id}/>
-      )):<p className='my-5 text-2xl text-center'>No Post yet! </p>}
+      )):<p className='my-5 text-2xl text-center text-primaryColor'>No Post yet! </p>}
     </div>
   );
 };

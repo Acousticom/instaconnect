@@ -6,8 +6,9 @@ module.exports = {
   theme: {
     extend: {
       colors:{
-        primaryColor:"#9333ea",
-        lightPurple:"#d8b4fe"
+        primaryColor:"#8b5cf6",
+        lightPurple:"#d8b4fe",
+        isactiveColor:"#dfe3ed"
       },
       width: {
         700: "700px",

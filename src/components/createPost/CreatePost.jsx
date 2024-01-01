@@ -8,7 +8,6 @@ import { usePost } from "../../context/postContext";
 
 const CreatePost = () => {
   const { currentUser } = useAuth();
-  console.log(currentUser);
   const [postContent, setPostContent] = useState("");
   const [selectedImage, setSelectedImage] = useState(null);
   const [showEmojiPicker, setShowEmojiPicker] = useState(false);
@@ -35,11 +34,13 @@ const CreatePost = () => {
     event.preventDefault();
     const postData = {
       comments: [],
-      content: postContent,
-      mediaURL: selectedImage,
+      description: postContent,
+      image: selectedImage,
       userId: currentUser._id,
     };
     addUserPost(postData);
+    setPostContent('')
+    setSelectedImage('')
   };
 
   return (
@@ -88,7 +89,7 @@ const CreatePost = () => {
             </div>
           </div>
           <button
-            className="border-2 text-xl px-4 py-1 rounded-lg"
+            className="border-2 text-xl px-6 py-1 rounded-lg bg-primaryColor text-white"
             type="submit"
           >
             Post

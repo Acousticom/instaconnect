@@ -95,7 +95,7 @@ const PostProvider = ({ children }) => {
     }
   };
 
-  const deleteUserComment = async ({ postId, commentId }) => {
+  const deleteUserComment = async ( {postId, commentId}) => {
     try {
       const {
         status,
@@ -125,7 +125,6 @@ const PostProvider = ({ children }) => {
       const {data:{posts}}=await editPost(postData,token)
       postDispatch({type:"EDITED_POSTS",payload:posts})
       toast.success("Post edited sucessfully")
-      console.log(posts)
     } catch (error) {
       toast.error(error.message)
     }
@@ -136,6 +135,7 @@ const PostProvider = ({ children }) => {
       const {status,data:{posts}}=await addPost(postData,token)
       if(status===200||status===201){
         postDispatch({type:"CREATE_NEW_POST",payload:posts})
+        console.log(posts)
       }
       toast.success("Post added sucessfully")
     } catch (error) {

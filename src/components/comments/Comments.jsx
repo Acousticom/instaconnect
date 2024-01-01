@@ -43,6 +43,7 @@ const Comments = ({ post }) => {
       postId:post?._id,
       commentId:comment?._id
     })
+    console.log(comment)
   }
   return (
     <div>

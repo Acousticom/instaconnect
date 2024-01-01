@@ -33,15 +33,8 @@ const UserProvider = ({ children }) => {
     }
   };
 
-  const fetchUserByUsername=async(username)=>{
-    try {
-        const {status,data:{user}}=await getUserByUsername(username)
-        if(status===200||status===201){userDispatch({type:"GET_USER_DETAILS",payload:user})}
-    } catch (error) {
-      
-    }
-  }
   const editUserHandler = async (userData) => {
+    console.log(userData)
     try {
       const {
         status,
@@ -49,8 +42,9 @@ const UserProvider = ({ children }) => {
       } = await editUserData(userData, token);
       if (status === 200 || status === 201) {
         setCurrentUser(user);
+        console.log(user)
+        console.log(currentUser)
       }
-      console.log(currentUser)
       toast.success("Profile edited sucessfully");
     } catch (error) {
       toast.error(error.message);

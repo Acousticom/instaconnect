@@ -17,8 +17,8 @@ const editComment = (postId, commentId, commentData, token) =>
     }
   );
 
-const deleteComment = (postId, commentId, token) =>
-  axios.delete(`/api/comments/delete/${postId}/${commentId}`, {
+const deleteComment = async(postId, commentId, token) =>
+ await axios.delete(`/api/comments/delete/${postId}/${commentId}`, {
     headers: { authorization: token },
   });
 

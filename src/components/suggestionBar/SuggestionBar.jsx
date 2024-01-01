@@ -15,8 +15,8 @@ const SuggestionBar = () => {
     .filter((person) => person?.username !== currentUser?.username)
     ?.filter(
       (user) =>
-        !currentUser?.following.find(
-          (account) => account.username === user.username
+        !currentUser?.following?.find(
+          (account) => account?.username === user?.username
         )
     );
   return (
@@ -44,7 +44,7 @@ const SuggestionBar = () => {
               </div>
 
               <button
-                className="border-2 cursor-pointer"
+                className="border-2 cursor-pointer bg-primaryColor text-white px-3 py-1 rounded-md"
                 onClick={() => followUserHandler(friend._id)}
               >
                 follow
