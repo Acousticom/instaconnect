@@ -5,7 +5,6 @@ import {
   followHandler,
   getAllusers,
   getBookmark,
-  getUserByUsername,
   removeBookmarkHandler,
   unFollowHandler,
 } from "../services/userServices";
