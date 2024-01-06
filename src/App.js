@@ -8,6 +8,7 @@ import Layout from "./layout/Layout";
 import Explore from "./pages/Explore";
 import Bookmark from "./pages/Bookmark";
 import Profile from "./pages/Profile";
+import Signup from "./pages/Signup";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         </Route>
         <Route path="/mockman" element={<Mockman />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
       </Routes>
     </div>
   );

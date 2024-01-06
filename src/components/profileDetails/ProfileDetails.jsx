@@ -3,12 +3,13 @@ import { useAuth } from "../../context/authContext";
 import { useUser } from "../../context/userContext";
 import { useParams } from "react-router-dom";
 import { usePost } from "../../context/postContext";
+import {FiLogOut} from "../../assests/icons";
 import Modal from "../modal/Modal";
 import EditUserProfile from "./EditUserProfile";
 
 const ProfileDetails = ({ profilePost, username,userDetails }) => {
   const [showEditForm,setShowEditForm]=useState(false)
-  const { currentUser } = useAuth();
+  const { currentUser,logoutHandler } = useAuth();
   const { userState } = useUser();
   const { postState } = usePost();
   const { posts } = postState;
@@ -45,12 +46,15 @@ const ProfileDetails = ({ profilePost, username,userDetails }) => {
         </div>
         <div>
           {isCurrentUser ? (
-            <button className="border-2 px-4 py-1 rounded-lg text-lg font-medium" onClick={()=>setShowEditForm(true)}>Edit</button>
+            <button className="border-2 px-4 py-1 rounded-lg text-lg font-medium bg-primaryColor text-white" onClick={()=>setShowEditForm(true)}>Edit</button>
           ) : ifFollowingUser ? (
             <button className="border-2 px-4 py-1 rounded-lg text-lg font-medium" onClick={()=>unFollowUserHandler(userDetails._id)}>Unfollow</button>
           ) : (
-            <button className="border-2 px-4 py-1 rounded-lg text-lg font-medium" onClick={()=>followUserHandler(userDetails._id)}>follow</button>
+            <button className="border-2 px-4 py-1 rounded-lg text-lg font-medium bg-primaryColor text-white" onClick={()=>followUserHandler(userDetails._id)}>follow</button>
           )}
+          {/* <span onClick={logoutHandler}>
+            <FiLogOut size={23}/>
+          </span> */}
         </div>
       </div>
       <Modal showModal={showEditForm} setShowModal={setShowEditForm}>

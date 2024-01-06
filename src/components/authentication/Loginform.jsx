@@ -2,6 +2,9 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useAuth } from '../../context/authContext'
 import toast from 'react-hot-toast'
+import Brandlogo from '../Brandlogo'
+import image from '../../assests/Images/Following-amico (1).png'
+// import {image} from '../../assests/add-friends-animate.svg'
 
 const Loginform = () => {
 
@@ -24,17 +27,9 @@ const Loginform = () => {
       loginHandler(userLoginDetails)
     }
   }
-  return (
-    <div className="max-w-md w-full  p-6 shadow-xl hover:shadow-2xl mx-2 border-2  sm:0 ">
+  return (<div className=''>
     <div className="flex items-center justify-center gap-4 mb-4">
-      <img
-        src="https://res.cloudinary.com/drre76xpz/image/upload/v1687520238/1005491_qrzn8x.png"
-        alt=""
-        className="w-14"
-      />
-      <h1 className="font-bold text-transparent text-3xl bg-clip-text bg-gradient-to-r from-lightPurple to-primaryColor">
-        Instaconnect
-      </h1>
+      <Brandlogo/>
     </div>
 
     <form className="flex flex-col gap-3" >

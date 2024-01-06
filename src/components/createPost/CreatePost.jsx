@@ -46,7 +46,7 @@ const CreatePost = () => {
   return (
     <div className="">
       <form
-        className="w-full border-2 px-6 py-4 my-5 rounded-lg"
+        className="w-full border-2 px-6 py-4 my-5 rounded-lg sScreens:px-1"
         onSubmit={submitHandler}
       >
         <div className="flex">
@@ -71,7 +71,7 @@ const CreatePost = () => {
           </div>
         )}
         <div className="flex items-center justify-between my-3">
-          <div className="flex gap-5 items-center">
+          <div className="flex gap-5 items-center sScreens:gap-2">
             <BiImageAdd
               size={34}
               onClick={handleImageSelect}

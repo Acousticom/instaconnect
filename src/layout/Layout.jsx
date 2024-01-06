@@ -8,13 +8,13 @@ const Layout = () => {
     <div>
       <Navbar className="" />
       <div className="flex justify-center">
-        <div className="mt-20 fixed left-5 ">
+        <div className="mt-20 fixed left-5">
           <Sidebar />
         </div>
         <main className="w-700 mt-20">
           <Outlet />
         </main>
-        <div className="mt-20 fixed right-2">
+        <div className="mt-20 fixed right-2 sLaptop:hidden">
           <SuggestionBar />
         </div>
       </div>

@@ -115,7 +115,7 @@ const EditUserProfile = ({ user, setShowModal }) => {
           >
             Cancel
           </button>
-          <button className="border-2 px-3 py-1 rounded-lg" type="submit">
+          <button className="border-2 px-3 py-1 rounded-lg bg-primaryColor text-white" type="submit">
             Update
           </button>
         </div>

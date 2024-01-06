@@ -62,9 +62,9 @@ const Comments = ({ post }) => {
             />
           )}
         </div>
-        <form onSubmit={submitCommentHandler} className="relative">
+        <form onSubmit={submitCommentHandler} className="relative w-full z-0">
           <input
-            className="border-2 px-3 py-1 rounded-xl w-580"
+            className="border-2 px-3 py-1 rounded-xl w-full z-0"
             placeholder="Add a new comment"
             value={editingComment ? editingComment.text : commentInput}
             onChange={(event) =>
@@ -78,7 +78,7 @@ const Comments = ({ post }) => {
           />
           {editingComment ? (
             <button
-              className="absolute right-5 top-1"
+              className="absolute right-5 top-1 z-0"
               onClick={updateCommentHandler}
             >
               Update

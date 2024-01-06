@@ -4,6 +4,13 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
+    screens:{
+      sLaptop:{'max':'1440px'},
+      lLaptop:'1441px',
+      sDevices:{'max':'700px'},
+      sScreens:{'max':'500px'},
+      mobiles:{'max':'400px'},
+    },
     extend: {
       colors:{
         primaryColor:"#8b5cf6",

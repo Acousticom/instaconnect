@@ -39,10 +39,10 @@ const PostCard = ({ post }) => {
   const currentUserPost = post?.username === currentUser?.username;
   return (
     <>
-    <div className="border-2  px-6 py-4 my-5 rounded-md  shadow-lg">
+    <div className="border-2  px-6 py-4 my-5 rounded-md shadow-lg sScreens:px-1">
       <div className="flex items-center justify-between">
         <div
-          className="flex gap-8 items-center cursor-pointer"
+          className="flex gap-8 items-center cursor-pointer sScreens:gap-2"
           onClick={() => navigate(`/profile/${filteredPostCard?.username}`)}
         >
           {filteredPostCard && (
@@ -83,7 +83,7 @@ const PostCard = ({ post }) => {
       )}
 
       <div className="flex justify-between items-center">
-        <div className="flex items-center gap-6">
+        <div className="flex items-center gap-6 sScreens:gap-3">
           <div className="flex items-center">
             <div>
               {isLiked ? (

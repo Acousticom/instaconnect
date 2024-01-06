@@ -52,7 +52,7 @@ const CommentsList = ({
             className="w-9 h-9 rounded-full"
           />
         )}
-        <div className="bg-gray-200 w-580 py-1 px-2 rounded-xl">
+        <div className="bg-gray-200 w-full py-1 px-2 rounded-xl">
           <div className="flex justify-between items-center">
             {isCurrentUserCommented ? (
               <p className="font-semibold block">{currentUser.username}</p>

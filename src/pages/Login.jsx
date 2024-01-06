@@ -1,11 +1,13 @@
 import React from 'react'
-import MainImage from '../assests/Images/MainImage.png'
+import image from '../assests/Images/Following-amico (1).png'
 import Loginform from '../components/authentication/Loginform'
 const Login = () => {
   return (
-    <div className='flex  justify-around items-center min-h-screen'>
-        <img src={MainImage} alt="" className='hidden xl:block w-[50rem]'/>
-        <Loginform/>
+    <div className="flex items-center justify-center h-screen">
+      <div className="flex items-center gap-3">
+        <img src={image} alt="" className="w-80 sDevices:hidden" />
+        <Loginform />
+      </div>
     </div>
   )
 }
