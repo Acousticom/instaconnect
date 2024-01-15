@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useReducer } from "react";
+import { createContext, useContext, useEffect, useReducer, useState } from "react";
 import {
   addPost,
   deletePost,
@@ -19,10 +19,12 @@ import {
 const PostContext = createContext();
 const PostProvider = ({ children }) => {
   const [postState, postDispatch] = useReducer(postReducer, postInitialState);
+  const [loading,setLoading]=useState(false)
   const { token } = useAuth();
 
   const getPost = async () => {
     try {
+      setLoading(true)
       const response = await getAllPosts();
       const {
         status,
@@ -30,6 +32,7 @@ const PostProvider = ({ children }) => {
       } = response;
       if (status === 200) {
         postDispatch({ type: "GET_ALL_POST", payload: posts });
+        setLoading(false)
       }
     } catch (error) {
       toast.error(error.message);
@@ -156,7 +159,8 @@ const PostProvider = ({ children }) => {
         deleteUserComment,
         deleteUserPost,
         editUserPost,
-        addUserPost
+        addUserPost,
+        loading
       }}
     >
       {children}

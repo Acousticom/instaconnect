@@ -17,7 +17,7 @@ const AuthProvider = ({ children }) => {
   );
   const [isloading, setIsLoading] = useState(false);
 
-  console.log(currentUser?.following)
+  // console.log(currentUser?.following)
   const loginAsGuestHandler = async () => {
     const userData = {
       username: "acousticomofficial",

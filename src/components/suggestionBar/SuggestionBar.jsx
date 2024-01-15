@@ -4,12 +4,13 @@ import { useAuth } from "../../context/authContext";
 import ProfileImage from "../ProfileImage";
 import { useNavigate } from "react-router-dom";
 import SearchBar from "./SearchBar";
+import UserShimmerCard from "../shimmerCard/UserShimmerCard";
 // import { useAuth } from '../context/authContext'
 
 const SuggestionBar = () => {
   const { currentUser } = useAuth();
   const navigate = useNavigate();
-  const { userState, followUserHandler } = useUser();
+  const { userState, followUserHandler,loading } = useUser();
   const { user } = userState;
   const friendsSuggestion = user
     .filter((person) => person?.username !== currentUser?.username)
@@ -25,6 +26,7 @@ const SuggestionBar = () => {
       <div className="w-80 border-2 px-4 py-3 my-5 rounded-md shadow-lg">
         <p>Who to follow?</p>
         <div>
+          {loading &&<UserShimmerCard/>}
           {friendsSuggestion.map((friend) => (
             <div
               className="flex justify-between items-center py-2"

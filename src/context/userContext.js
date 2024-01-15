@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useReducer } from "react";
+import { createContext, useContext, useEffect, useReducer, useState } from "react";
 import {
   addBookmarkHandler,
   editUserData,
@@ -15,10 +15,12 @@ import { useAuth } from "./authContext";
 const UserContext = createContext();
 const UserProvider = ({ children }) => {
   const { token, setCurrentUser,currentUser } = useAuth();
+  const [loading,setLoading]=useState(false)
   const [userState, userDispatch] = useReducer(userReducer, userInitialState);
 
   const getUsers = async () => {
     try {
+      setLoading(true)
       const response = await getAllusers();
       const {
         status,
@@ -26,6 +28,7 @@ const UserProvider = ({ children }) => {
       } = response;
       if (status === 200 || status === 201) {
         userDispatch({ type: "GET_ALL_USERS", payload: users });
+        setLoading(false)
       }
     } catch (error) {
       toast.error(error.message);
@@ -145,6 +148,7 @@ const UserProvider = ({ children }) => {
         followUserHandler,
         unFollowUserHandler,
         editUserHandler,
+        loading
       }}
     >
       {children}

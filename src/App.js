@@ -9,6 +9,7 @@ import Explore from "./pages/Explore";
 import Bookmark from "./pages/Bookmark";
 import Profile from "./pages/Profile";
 import Signup from "./pages/Signup";
+import PageNotFound from "./pages/PageNotFound";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             <Route path="/profile/:username" element={<Profile/>}/>
           </Route>
         </Route>
+        <Route path="*" element={<PageNotFound/>}/>
         <Route path="/mockman" element={<Mockman />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />

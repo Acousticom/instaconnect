@@ -42,7 +42,7 @@ const PostCard = ({ post }) => {
     <div className="border-2  px-6 py-4 my-5 rounded-md shadow-lg sScreens:px-1">
       <div className="flex items-center justify-between">
         <div
-          className="flex gap-8 items-center cursor-pointer sScreens:gap-2"
+          className="flex gap-5 items-center cursor-pointer sScreens:gap-2"
           onClick={() => navigate(`/profile/${filteredPostCard?.username}`)}
         >
           {filteredPostCard && (

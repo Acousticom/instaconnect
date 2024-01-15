@@ -2,10 +2,11 @@ import React from "react";
 import PostCard from "../components/posts/PostCard";
 import { usePost } from "../context/postContext";
 import { useAuth } from "../context/authContext";
+import PostShimmerCard from "../components/shimmerCard/PostShimmerCard";
 
 
 const Explore = () => {
-  const { postState } = usePost();
+  const { postState,loading } = usePost();
   const { posts } = postState;
   const {currentUser}=useAuth()
 
@@ -19,6 +20,7 @@ const Explore = () => {
 
   return (
     <div>
+      {loading&&<PostShimmerCard/>}
       {explorePost?.map((post)=><PostCard post={post} key={post._id}/>)}   
       
     </div>
